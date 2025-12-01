@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict AC5vIHhD2H1NmUwEFXcLOcJmvm0KeYePyifZEXS1FdGlmehx5kv5S9HHooTz27h
+\restrict OA39tDvzlHFkLMD0ObQIiOx2yJXfW2OBi8OgatTA1Vnd7Wq4Ii0BFcljqM8NhpD
 
 -- Dumped from database version 17.6 (Ubuntu 17.6-2.pgdg24.04+1)
 -- Dumped by pg_dump version 18.0 (Ubuntu 18.0-1.pgdg24.04+3)
 
--- Started on 2025-11-30 22:13:11 -03
+-- Started on 2025-12-01 12:08:59 -03
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -163,6 +163,11 @@ COPY public.conta (codconta, idtipoconta, codcliente, nmconta, codagencia, dtabe
 
 COPY public.tipoconta (idtipoconta, tipoconta) FROM stdin;
 1	Conta Corrente
+2	Conta Universitária
+3	Conta Conjunta
+4	Conta Salário
+5	Conta Empresarial
+6	Conta Poupança
 \.
 
 
@@ -174,6 +179,9 @@ COPY public.tipoconta (idtipoconta, tipoconta) FROM stdin;
 
 COPY public.tipotransacao (idtipotransacao, tipotransacao) FROM stdin;
 1	PIX
+2	TED
+3	DOC
+4	Boleto
 \.
 
 
@@ -286,11 +294,11 @@ ALTER TABLE ONLY public.transacao
     ADD CONSTRAINT transacao_idtipotransacao_fkey FOREIGN KEY (idtipotransacao) REFERENCES public.tipotransacao(idtipotransacao);
 
 
--- Completed on 2025-11-30 22:13:11 -03
+-- Completed on 2025-12-01 12:08:59 -03
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict AC5vIHhD2H1NmUwEFXcLOcJmvm0KeYePyifZEXS1FdGlmehx5kv5S9HHooTz27h
+\unrestrict OA39tDvzlHFkLMD0ObQIiOx2yJXfW2OBi8OgatTA1Vnd7Wq4Ii0BFcljqM8NhpD
 
