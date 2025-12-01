@@ -1,0 +1,139 @@
+package Dados;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class Transacao {
+	
+    private int idTransacao;
+    private Conta codConta;
+    private LocalDate dataTransacao;
+    private LocalTime hora;
+    private double valor;
+    private double tarifa;
+    private TipoTransacao tipoTransacao;
+    private String descricao;
+
+    public Transacao(int idTransacao, LocalDate dataTransacao, LocalTime hora, double valor, double tarifa, TipoTransacao tipoTransacao, Conta codConta, String descricao) {
+        this.idTransacao = idTransacao;
+        this.dataTransacao = dataTransacao;
+        this.hora = hora;
+        this.valor = valor;
+        this.tarifa = tarifa;
+        this.tipoTransacao = tipoTransacao;
+        this.codConta = codConta;
+        this.descricao=descricao;
+    }
+
+
+
+    public int getIdTransacao() {
+		return idTransacao;
+	}
+
+
+
+	public void setIdTransacao(int idTransacao) {
+		this.idTransacao = idTransacao;
+	}
+
+
+
+	public Conta getCodConta() {
+		return codConta;
+	}
+
+
+
+	public void setCodConta(Conta codConta) {
+		this.codConta = codConta;
+	}
+
+
+
+	public LocalDate getDataTransacao() {
+		return dataTransacao;
+	}
+
+
+
+	public void setDataTransacao(LocalDate dataTransacao) {
+		this.dataTransacao = dataTransacao;
+	}
+
+
+
+	public LocalTime getHora() {
+		return hora;
+	}
+
+
+
+	public void setHora(LocalTime hora) {
+		this.hora = hora;
+	}
+
+
+
+	public double getValor() {
+		return valor;
+	}
+
+
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+
+
+	public double getTarifa() {
+		return tarifa;
+	}
+
+
+
+	public void setTarifa(double tarifa) {
+		this.tarifa = tarifa;
+	}
+
+
+
+	public TipoTransacao getTipoTransacao() {
+		return tipoTransacao;
+	}
+
+
+
+	public void setTipoTransacao(TipoTransacao tipoTransacao) {
+		this.tipoTransacao = tipoTransacao;
+	}
+
+
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	@Override
+    public String toString() {
+        DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm:ss");
+        return "Transacao:\n" +
+                "ID: " + idTransacao + "\n" +
+                "Data: " + dataTransacao + "\n" +
+                "Hora: " + hora.format(formatterHora) + "\n" +
+                "Valor: R$ " + String.format("%.2f", valor) + "\n" +
+                "Tarifa: R$ " + String.format("%.2f", tarifa) + "\n" +
+                "Tipo: " + tipoTransacao.getTipoTransacao() + "\n" + 
+                "Conta: " + codConta + "\n" + 
+                "Descrição: " + descricao + "\n";
+    }
+    
+}
