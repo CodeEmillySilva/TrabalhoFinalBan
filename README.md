@@ -36,6 +36,6 @@ Baseadas no modelo conceitual e lógico entregue no Moodle:
 * Com esses passos basta se dirigir a pasta Main, na classe PrincipalBD e executar o código.
 * Após a execução será dadas todas as opções que atendem às diretrizes estipuladas no projeto.
 
-# Autores
+# Integrantes
 * **Andressa Almeida**
 * **Emilly Silva**
